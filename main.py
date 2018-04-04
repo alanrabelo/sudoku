@@ -113,37 +113,6 @@ def generateBoard(size):
 
     return np.concatenate([l1, l2, l3, l4, l5, l6, l7, l8, l9])
 
-def verifySolution(unverifiedSolution):
-    sumToVerify = ((size * size) + size) / 2
-    error = False
-    for index, sumatory in enumerate(np.sum(unverifiedSolution, axis=0)):
-        if sumatory != sumToVerify:
-            print("Error at horizontal index: " + str(index))
-            error = True
-
-    for index, sumatory in enumerate(np.sum(unverifiedSolution, axis=1)):
-        if sumatory != sumToVerify:
-            print("Error at vertical index: " + str(index))
-            error = True
-
-    return not error
-
-
-def verifySolution(unverifiedSolution):
-    sumToVerify = ((size * size) + size) / 2
-    error = False
-    for index, sumatory in enumerate(np.sum(unverifiedSolution, axis=0)):
-        if sumatory != sumToVerify:
-            print("Error at horizontal index: " + str(index))
-            error = True
-
-    for index, sumatory in enumerate(np.sum(unverifiedSolution, axis=1)):
-        if sumatory != sumToVerify:
-            print("Error at vertical index: " + str(index))
-            error = True
-
-    return not error
-
 def getSolutionFromMatrix(matrix):
     solution = []
     for index in range(0, size * size):
@@ -207,11 +176,8 @@ while not allColored(size, board):
 
 
 
-
 # Gera uma matriz para exibir a solução do problema baseada nas diagonais da matriz principal
 solution = getSolutionFromMatrix(board)
-
-
 print(solution)
 
 
